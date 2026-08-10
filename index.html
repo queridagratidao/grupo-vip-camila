@@ -114,8 +114,8 @@
 
 <div class="vip-tape-wrap">
   <div class="vip-tape">
-    <div class="vip-tape-track">
-      <span>VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP ·</span>
+    <div class="vip-tape-track" id="vip-tape-track">
+      <span>VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP · VIP ·</span>
     </div>
   </div>
 </div>
@@ -170,9 +170,21 @@
   <footer>
     <p class="handle">@psicamilasartori</p>
     <p class="creditos">Grupo direcionado pela psicóloga Camila Sartori</p>
+    <p class="creditos">Desenvolvido pela Agência Recria</p>
   </footer>
 
 </div>
+
+<script>
+  var track = document.getElementById('vip-tape-track');
+  var original = track.innerHTML;
+  var alvo = window.innerWidth * 2.5;
+  var tentativas = 0;
+  while (track.scrollWidth < alvo && tentativas < 30) {
+    track.insertAdjacentHTML('beforeend', original);
+    tentativas++;
+  }
+</script>
 
 </body>
 </html>
